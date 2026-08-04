@@ -79,25 +79,6 @@ if "indexed_filename" not in st.session_state:
 # --------------------------------------------------------------------------------------
 with st.sidebar:
     st.header("⚙️ Configuration")
-    st.markdown(
-        "Get a **free** Gemini API key (no credit card required) from "
-        "[Google AI Studio](https://aistudio.google.com/apikey)."
-    )
-
-    env_key = os.environ.get("GOOGLE_API_KEY", "")
-    api_key = st.text_input(
-        "Gemini API Key", value=env_key, type="password",
-        help="Used only for this session; never stored or logged.",
-    )
-
-    model_name = st.selectbox(
-        "Chat model",
-        options=["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-pro"],
-        index=0,
-        help="gemini-2.5-flash is the recommended free-tier default.",
-    )
-
-    st.divider()
     st.subheader("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader("Choose a PDF file", type=["pdf"])
 
