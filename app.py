@@ -78,19 +78,21 @@ if "indexed_filename" not in st.session_state:
 # Sidebar: configuration
 # --------------------------------------------------------------------------------------
 with st.sidebar:
-    api_key=os.environ.get("GOOGLE_API_KEY", "")
-    MODEL_OPTIONS = [
-    "gemini-2.5-flash-lite",
-    "gemini-2.5-pro",
-    ]
-    
-    model_name = st.selectbox(
-    "Gemini Model",
-    MODEL_OPTIONS,
-    index=0
-    )
-    
     st.header("⚙️ Configuration")
+
+    try:
+    api_key = st.secrets["GOOGLE_API_KEY"]
+except Exception:
+    api_key = os.getenv("GOOGLE_API_KEY")
+
+    model_name = st.selectbox(
+        "Chat model",
+        options=["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-pro"],
+        index=0,
+        help="gemini-2.5-flash is the recommended free-tier default.",
+    )
+
+    st.divider()
     st.subheader("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader("Choose a PDF file", type=["pdf"])
 
