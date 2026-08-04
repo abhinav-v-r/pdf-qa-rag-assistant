@@ -78,6 +78,7 @@ if "indexed_filename" not in st.session_state:
 # Sidebar: configuration
 # --------------------------------------------------------------------------------------
 with st.sidebar:
+    api_key=os.environ.get("GOOGLE_API_KEY", "")
     st.header("⚙️ Configuration")
     st.subheader("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader("Choose a PDF file", type=["pdf"])
