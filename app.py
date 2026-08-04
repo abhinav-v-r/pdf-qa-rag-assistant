@@ -82,13 +82,14 @@ with st.sidebar:
     MODEL_OPTIONS = [
     "gemini-2.5-flash-lite",
     "gemini-2.5-pro",
-]
-
-model_name = st.selectbox(
+    ]
+    
+    model_name = st.selectbox(
     "Gemini Model",
     MODEL_OPTIONS,
     index=0
-)
+    )
+    
     st.header("⚙️ Configuration")
     st.subheader("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader("Choose a PDF file", type=["pdf"])
