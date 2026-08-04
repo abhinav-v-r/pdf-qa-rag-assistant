@@ -58,8 +58,8 @@ interactions within a browser session and resets when a new PDF is uploaded or t
 ## How to Run Locally
 
 ```bash
-git clone <your-repo-url>
-cd pdf-qa-rag
+git clone https://github.com/abhinav-v-r/pdf-qa-rag-assistant
+cd pdf-qa-rag-assistant
 pip install -r requirements.txt
 export GOOGLE_API_KEY="your-free-gemini-api-key"   # from https://aistudio.google.com/apikey
 streamlit run app.py
@@ -80,8 +80,7 @@ streamlit run app.py
 5. Click **Deploy**. Streamlit Cloud installs `requirements.txt` and launches the app; the public
    URL is shown once the build finishes.
 
-**🌐 Deployment link:** _add your live Streamlit Community Cloud URL here after deploying_
-
+**🌐 Deployment link:**[PDF QA RAG APP](https://epoch-pdf-rag-assistant.streamlit.app/)
 ## Proof of Implementation: Screenshots
 
 **1. Application interface (empty state)** — PDF upload, API key entry, and model selection in the sidebar
