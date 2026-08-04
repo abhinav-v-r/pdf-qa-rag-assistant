@@ -81,9 +81,9 @@ with st.sidebar:
     st.header("⚙️ Configuration")
 
     try:
-    api_key = st.secrets["GOOGLE_API_KEY"]
-except Exception:
-    api_key = os.getenv("GOOGLE_API_KEY")
+        api_key = st.secrets["GOOGLE_API_KEY"]
+    except Exception:
+        api_key = os.getenv("GOOGLE_API_KEY")
 
     model_name = st.selectbox(
         "Chat model",
