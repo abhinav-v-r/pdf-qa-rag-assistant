@@ -79,6 +79,7 @@ if "indexed_filename" not in st.session_state:
 # --------------------------------------------------------------------------------------
 with st.sidebar:
     api_key=os.environ.get("GOOGLE_API_KEY", "")
+    model_name="gemini-2.5-flash"
     st.header("⚙️ Configuration")
     st.subheader("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader("Choose a PDF file", type=["pdf"])
